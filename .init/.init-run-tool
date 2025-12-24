@@ -1,0 +1,4 @@
+{
+    "command": "SERVER_PORT=<port> SERVER_ADDRESS=<host> ./gradlew bootRun",
+    "working_directory": "/home/kavia/workspace/code-generation/product-management-api-301764-301773/product_api_backend"
+}

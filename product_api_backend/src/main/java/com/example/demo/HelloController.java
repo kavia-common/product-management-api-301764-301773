@@ -1,4 +1,4 @@
-package com.example.productapibackend;
+package com.example.demo;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -23,8 +23,9 @@ public class HelloController {
     @Operation(summary = "API Documentation", description = "Redirects to Swagger UI preserving original scheme/host/port")
     public RedirectView docs(HttpServletRequest request) {
         // Build an absolute URL based on the incoming request, honoring X-Forwarded-* headers
+        String requestUrl = request.getRequestURL().toString();
         String target = UriComponentsBuilder
-                .fromHttpRequest(new ServletServerHttpRequest(request))
+                .fromHttpUrl(requestUrl)
                 .replacePath("/swagger-ui.html")
                 .replaceQuery(null)
                 .build()
